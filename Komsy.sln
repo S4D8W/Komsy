@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33711.374
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komsy.Api", "Komsy.Api\Komsy.Api.csproj", "{6211A6C8-3D22-4EC4-AF73-93C291C029A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Komsy.Api", "Komsy.Api\Komsy.Api.csproj", "{6211A6C8-3D22-4EC4-AF73-93C291C029A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komsy,Application", "Komsy,Application\Komsy,Application.csproj", "{59FC6826-5A0F-486B-B7D4-F83B02A7651E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Komsy.Contracts", "Komsy.Contracts\Komsy.Contracts.csproj", "{BC9C27AC-4EE1-43C6-9ABA-8847FC9F02A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komsy.Contracts", "Komsy.Contracts\Komsy.Contracts.csproj", "{BC9C27AC-4EE1-43C6-9ABA-8847FC9F02A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Komsy.Domain", "Komsy.Domain\Komsy.Domain.csproj", "{9267173F-4427-4102-9881-C790E33136A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komsy.Domain", "Komsy.Domain\Komsy.Domain.csproj", "{9267173F-4427-4102-9881-C790E33136A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Komsy.Infrastructure", "Komsy.Infrastructure\Komsy.Infrastructure.csproj", "{45E6B428-3D23-4D80-ABFC-D4F8DA8EE75D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komsy.Infrastructure", "Komsy.Infrastructure\Komsy.Infrastructure.csproj", "{45E6B428-3D23-4D80-ABFC-D4F8DA8EE75D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komsy.Application", "Komsy.Application\Komsy.Application.csproj", "{76934064-F221-4B7F-9FD1-9A5ED22D4D93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{6211A6C8-3D22-4EC4-AF73-93C291C029A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6211A6C8-3D22-4EC4-AF73-93C291C029A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6211A6C8-3D22-4EC4-AF73-93C291C029A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59FC6826-5A0F-486B-B7D4-F83B02A7651E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59FC6826-5A0F-486B-B7D4-F83B02A7651E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59FC6826-5A0F-486B-B7D4-F83B02A7651E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59FC6826-5A0F-486B-B7D4-F83B02A7651E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC9C27AC-4EE1-43C6-9ABA-8847FC9F02A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC9C27AC-4EE1-43C6-9ABA-8847FC9F02A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC9C27AC-4EE1-43C6-9ABA-8847FC9F02A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{45E6B428-3D23-4D80-ABFC-D4F8DA8EE75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45E6B428-3D23-4D80-ABFC-D4F8DA8EE75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45E6B428-3D23-4D80-ABFC-D4F8DA8EE75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76934064-F221-4B7F-9FD1-9A5ED22D4D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76934064-F221-4B7F-9FD1-9A5ED22D4D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76934064-F221-4B7F-9FD1-9A5ED22D4D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76934064-F221-4B7F-9FD1-9A5ED22D4D93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
