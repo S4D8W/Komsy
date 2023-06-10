@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -18,9 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-		<ProjectReference Include="..\Komsy.Contracts\Komsy.Application.csproj" />
+    <ProjectReference Include="..\Komsy.Application\Komsy.Application.csproj" />
     <ProjectReference Include="..\Komsy.Contracts\Komsy.Contracts.csproj" />
-		<ProjectReference Include="..\Komsy.Contracts\Komsy.Infrastructure.csproj" />
+    <ProjectReference Include="..\Komsy.Infrastructure\Komsy.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
