@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
-using Microsoft.Extensions.Options;
 using ErrorOr;
 using Komsy.Api.Common.Http;
 
@@ -13,7 +12,6 @@ namespace Komsy.Api.Common.Errors;
 
 public class KomsyProblemDetailsFactory : ProblemDetailsFactory {
   private readonly ApiBehaviorOptions _options;
-  private readonly Action<ProblemDetailsContext>? _configure;
 
   public KomsyProblemDetailsFactory(IOptions<ApiBehaviorOptions> options) {
 

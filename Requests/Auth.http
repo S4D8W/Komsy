@@ -1,0 +1,30 @@
+@hostname = localhost
+@port = 5185
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+
+POST http://{{host}}/auth/register
+Content-Type:{{contentType}}
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "JD@gmail.com",
+    "password": "123456"
+    
+}
+
+###
+
+POST http://{{host}}/auth/login
+Content-Type:{{contentType}}
+
+{
+    
+    "email": "JD@gmail.com",
+    "password": "123456"
+    
+}
+
+###
