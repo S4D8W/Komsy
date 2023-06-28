@@ -12,6 +12,12 @@ public static class DependencyInjection {
 
     services.AddMappings();
 
+    //testowo
+    services.AddCors(pCorsOptions => {
+      pCorsOptions.AddPolicy("DevCorsPolicy", pPolicyBuilder => {
+        pPolicyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+      });
+    });
     return services;
   }
 

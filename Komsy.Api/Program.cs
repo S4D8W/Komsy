@@ -13,6 +13,11 @@ var builder = WebApplication.CreateBuilder(args); {
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment()) {
+  //pApplication.UseSwagger();
+  //pApplication.UseSwaggerUI();
+  app.UseCors("DevCorsPolicy");
+}
 app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
 app.UseAuthentication();
