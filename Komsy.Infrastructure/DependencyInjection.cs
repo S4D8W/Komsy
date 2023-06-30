@@ -12,15 +12,15 @@ using Komsy.Infrastructure.Persistence;
 using Komsy.Infrastructure.Authentication;
 using Komsy.Application.Services.Authentication;
 using Komsy.Application.Common.Interfaces.Persistence;
+using Komsy.Application.Services;
+using Komsy.Infrastructure.Services;
 
 namespace Komsy.Infrastructure;
 
-public static class DependencyInjection
-{
+public static class DependencyInjection {
   public static IServiceCollection AddInfrastructure(
     this IServiceCollection services,
-    ConfigurationManager configuration)
-  {
+    ConfigurationManager configuration) {
 
     services.AddAuth(configuration);
     services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
@@ -36,8 +36,7 @@ public static class DependencyInjection
 
   public static IServiceCollection AddAuth(
       this IServiceCollection services,
-      ConfigurationManager configuration)
-  {
+      ConfigurationManager configuration) {
 
     var jwtSettings = new JwtSettings();
     configuration.Bind(JwtSettings.SectionName, jwtSettings);
@@ -46,12 +45,11 @@ public static class DependencyInjection
 
     services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
     services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
+    services.AddScoped<IEncrypter, Encrypter>();
 
     services.AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
-      .AddJwtBearer(options =>
-      {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
+      .AddJwtBearer(options => {
+        options.TokenValidationParameters = new TokenValidationParameters {
           ValidateIssuer = true,
           ValidateAudience = true,
           ValidateLifetime = true,
@@ -69,8 +67,7 @@ public static class DependencyInjection
 
   public static IServiceCollection AddMongoDb(
        this IServiceCollection services,
-          ConfigurationManager configuration)
-  {
+          ConfigurationManager configuration) {
 
     var mongoDbSettings = new MongoDbSettings();
     configuration.Bind(MongoDbSettings.SectionName, mongoDbSettings);
