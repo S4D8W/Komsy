@@ -1,4 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "chat.experimental.quickQuestion.enable": true
+  "chat.experimental.quickQuestion.enable": true,
+  "dotnet.defaultSolution": "Komsy.sln"
 }

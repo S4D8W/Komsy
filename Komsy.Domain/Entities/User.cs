@@ -1,8 +1,11 @@
-namespace Komsy.Domain.Entities {
+﻿
+namespace Komsy.Domain.Entities
+{
 
-  public class User {
+  [BsonCollection("Users")]
+  public class User : Document
+  {
 
-    public Guid Id { get; set; } = new Guid();
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public string Email { get; set; } = null!;

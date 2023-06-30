@@ -1,6 +1,7 @@
 using System.Reflection;
 using FluentValidation;
 using Komsy.Application.Common.Behaviors;
+using Komsy.Application.Services.Authentication;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +16,8 @@ public static class DependencyInjection {
                       typeof(ValidationBehavior<,>));
 
     services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+    services.AddScoped<IAuthenticationService, AuthenticationService>();
 
     return services;
 

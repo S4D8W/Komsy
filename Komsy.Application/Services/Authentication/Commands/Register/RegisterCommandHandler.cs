@@ -10,38 +10,23 @@ namespace Komsy.Application.Services.Authentication.Commands.Register;
 public class RegisterCommandHandler
         : IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>> {
 
-  private readonly IJwtTokenGenerator _jwtTokenGenerator;
-  private readonly IUserRepository _userRepository;
+  private readonly IAuthenticationService _authenticationService;
 
-  public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository) {
-    _jwtTokenGenerator = jwtTokenGenerator;
-    _userRepository = userRepository;
+  public RegisterCommandHandler(IAuthenticationService authenticationService) {
+    _authenticationService = authenticationService;
   }
+
 
   public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken) {
 
-    await Task.CompletedTask;
-    //validate the user doesn't exist
-    if (_userRepository.GetByEmail(command.Email) is not null) {
-      return Errors.User.DuplicateEmail;
-    }
 
-    //create user (generate unique id) & Persist to DB
-    var user = new User {
-      FirstName = command.FirstName,
-      LastName = command.LastName,
-      Email = command.Email,
-      Password = command.Password
-    };
+    return await _authenticationService.RegisterAsync(
+      command.FirstName,
+      command.LastName,
+      command.Email,
+      command.Password
+    );
 
-    _userRepository.Add(user);
-
-    //Create JWT token
-    var token = _jwtTokenGenerator.GenerateToken(user);
-
-    return new AuthenticationResult(
-      user,
-      token);
   }
 
 
