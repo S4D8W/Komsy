@@ -27,7 +27,10 @@ public class AuthenticationService : IAuthenticationService {
     }
 
     //validate the password is correct
-    if (user.Password != password) {
+
+    string hash = _encrypter.GetHash(password, user.Salt);
+
+    if (user.Password != hash) {
       return new[] { Errors.Authentication.InvalideCredentials };
     }
 
