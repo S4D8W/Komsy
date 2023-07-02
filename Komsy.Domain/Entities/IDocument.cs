@@ -6,8 +6,8 @@ namespace Komsy.Domain.Entities {
   public interface IDocument {
 
     ObjectId Id { get; set; }
-    DateTime CreatedAt { get;  }
-
+    DateTime CreatedAt { get; }
+    string UId { get; }
   }
 
 
@@ -15,7 +15,6 @@ namespace Komsy.Domain.Entities {
 
     public ObjectId Id { get; set; }
     public DateTime CreatedAt => Id.CreationTime;
-
-
+    public string UId => Id.ToString();
   }
 }
