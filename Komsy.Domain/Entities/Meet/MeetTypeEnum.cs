@@ -1,9 +1,9 @@
-namespace Komsy.Domain.Entities.Meet {
+namespace Komsy.Domain.Entities.nsMeet {
   public enum MeetTypeEnum {
     Meet = 0,
     Event = 1,
     Appointment = 2,
     Other = 3,
-    Coompetition = 4
+    Competition = 4
   }
 }
