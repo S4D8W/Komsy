@@ -1,4 +1,4 @@
-namespace Komsy.Application.Services.Meet;
+namespace Komsy.Application.Services.Meeting;
 
 public class MeetService : IMeetService {
 

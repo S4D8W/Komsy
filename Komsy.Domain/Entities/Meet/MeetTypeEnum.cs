@@ -1,4 +1,4 @@
-namespace Komsy.Domain.Entities.Meet {
+namespace Komsy.Domain.Entities.Meeting {
   public enum MeetTypeEnum {
     Meet = 0,
     Event = 1,

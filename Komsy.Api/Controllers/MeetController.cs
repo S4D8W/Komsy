@@ -1,0 +1,32 @@
+
+using Komsy.Application.Services.Meeting.Commands;
+using Komsy.Contracts.Meeting;
+using MapsterMapper;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Komsy.Api.Controllers;
+
+[Route("auth")]
+public class MeetController : ApiController {
+
+  private readonly IMediator _mediator;
+  private readonly IMapper _mapper;
+  public MeetController(IMediator mediator) {
+    _mediator = mediator;
+  }
+
+  [HttpPost("CreateMeet")]
+  public async Task<IActionResult> CreateMeet(CreateMeetRequest request) {
+
+    var command = _mapper.Map<CreateMeetCommand>(request);
+
+    var meetResult = await _mediator.Send(command);
+
+    return meetResult.Match(
+      meetResult => Ok(_mapper.Map<MeetResponse>(meetResult)),
+      errors => Problem(errors)
+    );
+
+  }
+}

@@ -1,4 +1,5 @@
-namespace Komsy.Domain.Entities.Meet;
+
+namespace Komsy.Domain.Entities.Meeting;
 
 [BsonCollection("Meets")]
 public class Meet : Document {

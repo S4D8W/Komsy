@@ -1,5 +1,3 @@
-
-
 using ErrorOr;
 using Komsy.Application.Services.Authentication;
 using Komsy.Application.Services.Authentication.Commands.Register;
