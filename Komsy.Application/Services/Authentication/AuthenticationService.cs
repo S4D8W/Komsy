@@ -23,7 +23,7 @@ public class AuthenticationService : IAuthenticationService {
 
     //validate the user exists
     if (await _userRepository.FindOneAsync(x => x.Email == email) is not User user) {
-      return Errors.Authentication.InvalideCredentials;
+      return Errors.Authentication.InvalidCredentials;
     }
 
     //validate the password is correct
@@ -31,7 +31,7 @@ public class AuthenticationService : IAuthenticationService {
     string hash = _encrypter.GetHash(password, user.Salt);
 
     if (user.Password != hash) {
-      return new[] { Errors.Authentication.InvalideCredentials };
+      return new[] { Errors.Authentication.InvalidCredentials };
     }
 
     //Create JWT token
@@ -67,8 +67,9 @@ public class AuthenticationService : IAuthenticationService {
     //Create JWT token
     var token = _jwtTokenGenerator.GenerateToken(user);
 
-    user.Password = null;
-    user.Salt = null;
+    user.Password = string.Empty;
+    user.Salt = string.Empty;
+
     return new AuthenticationResult(
     user,
     token);

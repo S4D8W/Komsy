@@ -4,6 +4,6 @@ namespace Komsy.Domain.Entities.Meeting {
     Event = 1,
     Appointment = 2,
     Other = 3,
-    Coompetition = 4
+    Competition = 4
   }
 }

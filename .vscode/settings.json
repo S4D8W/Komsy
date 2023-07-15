@@ -1,5 +1,8 @@
 {
   "editor.formatOnSave": true,
   "chat.experimental.quickQuestion.enable": true,
-  "dotnet.defaultSolution": "Komsy.sln"
+  "dotnet.defaultSolution": "Komsy.sln",
+  "cSpell.words": [
+    "Bson"
+  ]
 }
