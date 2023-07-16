@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Komsy.Application.Services.Meet.Commands.CreateMeet {
+namespace Komsy.Application.Services.Meeting.Commands.CreateMeet {
   public class CreateMeetCommandValidator : AbstractValidator<CreateMeetCommand> {
     public CreateMeetCommandValidator() {
       RuleFor(v => v.Name)

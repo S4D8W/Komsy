@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-namespace Komsy.Domain.Entities.Meeting;
-=======
-namespace Komsy.Domain.Entities.nsMeet;
->>>>>>> aba37edb718094b5a4e63aa493a89acc922c6a2e
+﻿namespace Komsy.Domain.Entities.Meeting;
 
 [BsonCollection("Meets")]
 public class Meet : Document {

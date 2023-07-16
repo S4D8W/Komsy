@@ -1,8 +1,8 @@
-using Komsy.Domain.Entities.Meeting;
+﻿using Komsy.Domain.Entities.Meeting;
 
 namespace Komsy.Application.Services.Meeting.Common {
   public record MeetResult(
-    Meet Meet
+    Komsy.Domain.Entities.Meeting.Meet Meet
   );
 }
 

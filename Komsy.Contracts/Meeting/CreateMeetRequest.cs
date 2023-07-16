@@ -1,9 +1,15 @@
+
+
 namespace Komsy.Contracts.Meeting {
 
   public record CreateMeetRequest(
     string Name,
     string Description,
     DateTime Date,
-    string Location
+    string Street,
+    string City,
+    string State,
+    string Country,
+    string ZipCode
   );
 }
