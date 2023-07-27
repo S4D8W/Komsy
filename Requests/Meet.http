@@ -1,0 +1,24 @@
+@hostname = localhost
+@port = 5185
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+@token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGMxZmUxOWM2NmM1OGQyMTA1ZGMyNzciLCJnaXZlbl9uYW1lIjoiSm9obiIsImZhbWlseV9uYW1lIjoiRG9lIiwianRpIjoiY2YyZGVkYzAtOTMwNi00YmRjLWFhYzAtYjRiNzQ5MDNlZmE0IiwiZXhwIjoxNjkwNDM1MTIxfQ.N-NJ7XdJlEP8WNBjOioXwxVHxeY7V6NFj82Ve_kT7NA"
+
+
+POST  http://{{host}}/Meet/CreateMeet
+Content-Type:{{contentType}}
+Authorization: Bearer {{token}}
+
+{
+    "Name": "Coffe ride",
+    "Description": "First coffe ride",
+    "Date_Start": "27.07.2023 07:49:53",
+    "Date_End": "27.07.2023 07:49:53",
+    "State": "planned",
+    "Street": "Zachlapana",
+    "City": "Zachlapane",
+    "Country": "poland",
+    "ZipCode": "00-000",
+    "User_Id":"64c1fe19c66c58d2105dc277",
+    "MeetType": "Meet"
+}

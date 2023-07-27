@@ -2,7 +2,7 @@
 @port = 5185
 @host = {{hostname}}:{{port}}
 @contentType = application/json
-
+@token = ""
 
 POST http://{{host}}/auth/register
 Content-Type:{{contentType}}
@@ -28,3 +28,4 @@ Content-Type:{{contentType}}
 }
 
 ###
+

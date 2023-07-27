@@ -11,7 +11,10 @@ public class MeetMappingConfing : IRegister {
   public void Register(TypeAdapterConfig config) {
 
     config.NewConfig<CreateMeetRequest, CreateMeetCommand>()
-      .Map(dest => dest.Location, src => this.MapLocation(src));
+      .Map(dest => dest.Location, src => this.MapLocation(src))
+      .Map(dest => dest.User_Id, src => src.User_Id)
+      .Map(dest => dest.Date_Start, src => src.Date_Start)
+      .Map(dest => dest.Date_End, src => src.Date_End);
 
   }
 

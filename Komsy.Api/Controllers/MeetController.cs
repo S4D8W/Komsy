@@ -7,18 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Komsy.Api.Controllers;
 
-[Route("auth")]
+[Route("Meet")]
 public class MeetController : ApiController {
 
   private readonly IMediator _mediator;
   private readonly IMapper _mapper;
-  public MeetController(IMediator mediator) {
+  public MeetController(IMediator mediator, IMapper mapper) {
     _mediator = mediator;
+    _mapper = mapper;
   }
 
   [HttpPost("CreateMeet")]
   public async Task<IActionResult> CreateMeet(CreateMeetRequest request) {
 
+    var pTest = DateTime.Now.ToString();
     var command = _mapper.Map<CreateMeetCommand>(request);
 
     var meetResult = await _mediator.Send(command);
