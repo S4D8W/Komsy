@@ -20,9 +20,7 @@ public class MeetController : ApiController {
   [HttpPost("CreateMeet")]
   public async Task<IActionResult> CreateMeet(CreateMeetRequest request) {
 
-    var pTest = DateTime.Now.ToString();
     var command = _mapper.Map<CreateMeetCommand>(request);
-
     var meetResult = await _mediator.Send(command);
 
     return meetResult.Match(

@@ -12,8 +12,6 @@ Authorization: Bearer {{token}}
 {
     "Name": "Coffe ride",
     "Description": "First coffe ride",
-    "Date_Start": "27.07.2023 07:49:53",
-    "Date_End": "27.07.2023 07:49:53",
     "State": "planned",
     "Street": "Zachlapana",
     "City": "Zachlapane",
