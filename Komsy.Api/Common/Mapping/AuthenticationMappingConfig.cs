@@ -7,9 +7,11 @@ using Mapster;
 
 namespace Komsy.Api.Common.Mapping;
 
-public class AuthenticationMappingConfig : IRegister {
+public class AuthenticationMappingConfig : IRegister
+{
 
-  public void Register(TypeAdapterConfig config) {
+  public void Register(TypeAdapterConfig config)
+  {
 
     config.NewConfig<RegisterRequest, RegisterCommand>();
 

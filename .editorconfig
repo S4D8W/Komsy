@@ -3,7 +3,9 @@
 ###############################
 
 root = true
-
+[*.openapi.json] 
+indent_style = space
+indent_size = 2
 # All files
 [*]
 indent_style = space
@@ -14,6 +16,7 @@ end_of_line = crlf
 
 [*.cshtml]
 csharp_new_line_before_open_brace = false
+csharp_new_line_before_open_brace = none
 csharp_new_line_before_else = false
 csharp_new_line_before_catch = false
 csharp_new_line_before_finally = false

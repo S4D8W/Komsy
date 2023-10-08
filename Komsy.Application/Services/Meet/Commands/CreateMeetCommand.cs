@@ -12,6 +12,6 @@ public record CreateMeetCommand(
   DateTime Date_Start,
   DateTime Date_End,
   Location Location,
-  string User_Id,
+  string UserId,
   string MeetType
   ) : IRequest<ErrorOr<MeetResult>>;

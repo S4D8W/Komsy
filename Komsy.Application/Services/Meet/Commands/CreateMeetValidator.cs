@@ -1,4 +1,4 @@
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace Komsy.Application.Services.Meeting.Commands.CreateMeet {
   public class CreateMeetCommandValidator : AbstractValidator<CreateMeetCommand> {
@@ -13,7 +13,7 @@ namespace Komsy.Application.Services.Meeting.Commands.CreateMeet {
       //   .NotEmpty().WithMessage("Date_Start is required");
       // RuleFor(v => v.Date_End)
       //  .NotEmpty().WithMessage("Date_End is required");
-      RuleFor(v => v.User_Id)
+      RuleFor(v => v.UserId)
         .NotEmpty().WithMessage("User_Id is required");
       RuleFor(v => v.MeetType)
         .NotEmpty().WithMessage("MeetType is required");

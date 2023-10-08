@@ -13,7 +13,7 @@ namespace Komsy.Application.Services.Meeting.Commands.CreateMeet {
 
     public async Task<ErrorOr<MeetResult>> Handle(CreateMeetCommand command, CancellationToken cancellationToken) {
       return await _meetService.CreateMeetAsync(
-        createUserId: command.User_Id,
+        createUserId: command.UserId,
         name: command.Name,
         description: command.Description,
         location: command.Location,
