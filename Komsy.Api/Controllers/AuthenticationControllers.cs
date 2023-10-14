@@ -1,4 +1,4 @@
-using ErrorOr;
+﻿using ErrorOr;
 using Komsy.Application.Services.Authentication;
 using Komsy.Application.Services.Authentication.Commands.Register;
 using Komsy.Application.Services.Authentication.Queries;
@@ -34,6 +34,8 @@ public class AuthenticationController : ApiController {
     );
 
   }
+
+
 
 
   [HttpPost("login")]

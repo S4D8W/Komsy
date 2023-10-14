@@ -8,8 +8,13 @@ var builder = WebApplication.CreateBuilder(args); {
   .AddAPresentation()
   .AddApplication()
   .AddInfrastructure(builder.Configuration);
-}
 
+}
+builder.Services.AddCors(corsOptions => {
+  corsOptions.AddPolicy("DevCorsPolicy", pPolicyBuilder => {
+    pPolicyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+  });
+});
 
 var app = builder.Build();
 
