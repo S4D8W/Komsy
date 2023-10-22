@@ -1,5 +1,6 @@
 ﻿using ErrorOr;
 using Komsy.Application.Common.Interfaces.Persistence;
+using Komsy.Application.Services.Authentication.Common;
 using Komsy.Domain.Common.Errors;
 using Komsy.Domain.Entities;
 
@@ -75,5 +76,37 @@ public class AuthenticationService : IAuthenticationService {
     token);
   }
 
+  public async Task<ErrorOr<AuthResetPasswordResult>> ResetPassword(string email) {
 
+    User user = await _userRepository.FindOneAsync(x => x.Email == email);
+
+    if (user is null) {
+      return Errors.Authentication.InvalidCredentials;
+    }
+
+    //generate password 8 characters long
+    string newPassword = GeneratePassword();
+
+    //generate salt & hash
+    var salt = _encrypter.GetSalt(newPassword);
+    var hash = _encrypter.GetHash(newPassword, salt);
+
+    //update user password
+    user.Password = hash;
+    user.Salt = salt;
+
+    await _userRepository.ReplaceOneAsync(user);
+
+    return new AuthResetPasswordResult(
+      true
+    );
+
+  }
+
+  private string GeneratePassword() {
+    const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var random = new Random();
+    return new string(Enumerable.Repeat(chars, 8)
+      .Select(s => s[random.Next(s.Length)]).ToArray());
+  }
 }
