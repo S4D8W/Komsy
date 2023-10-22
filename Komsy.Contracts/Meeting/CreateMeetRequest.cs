@@ -1,9 +1,9 @@
-
+﻿
 
 namespace Komsy.Contracts.Meeting {
 
   public record CreateMeetRequest(
-    string User_Id,
+    string UserId,
     string Name,
     string Description,
     DateTime Date_Start,

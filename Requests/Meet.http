@@ -17,6 +17,8 @@ Authorization: Bearer {{token}}
     "City": "Zachlapane",
     "Country": "poland",
     "ZipCode": "00-000",
-    "User_Id":"64c1fe19c66c58d2105dc277",
-    "MeetType": "Meet"
+    "UserId":"64c1fe19c66c58d2105dc277",
+    "MeetType": "Meet",
+    "Date_Start": "2021-04-01T12:00:00",
+    "Date_End": "2021-04-01T14:00:00"
 }
