@@ -2,6 +2,7 @@ using System.Reflection;
 using FluentValidation;
 using Komsy.Application.Common.Behaviors;
 using Komsy.Application.Services.Authentication;
+using Komsy.Application.Services.Email;
 using Komsy.Application.Services.Meeting;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,7 @@ public static class DependencyInjection {
 
     services.AddScoped<IAuthenticationService, AuthenticationService>();
     services.AddScoped<IMeetService, MeetService>();
-
+    services.AddScoped<IEmailService, EmailService>();
 
     return services;
 
